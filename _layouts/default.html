@@ -3,18 +3,19 @@
 
   {% include head.html %}
 
-  <body class="bg-blend">
-    {% include fbsdk.html %}
-    <div class="filter">
-
+  <body>
+    {% include nav.html %}
     {% include header.html %}
 
-    <div class="container-fluid">
+    <div>
+      <div>
         {{ content }}
+      </div>
     </div>
 
     {% include footer.html %}
-    </div>
+    {% include js.html %}
+
   </body>
 
 </html>

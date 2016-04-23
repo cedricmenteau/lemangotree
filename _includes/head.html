@@ -3,35 +3,55 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ site.title }}</title>
-  <meta name="description" content="Le Mango Tree - Nouveau bar à jus de fruits sur Hossegor, Capbreton, Seignosse">
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <!-- Schema.org markup for Google+ -->
-  <meta itemprop="name" content="{{ page.title }}">
-  <meta itemprop="description" content="Le Mango Tree - Nouveau bar à jus de fruits sur Hossegor, Capbreton, Seignosse">
-  <meta itemprop="image" content="{{ site.url }}/img/orange.jpg">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ site.github.url }}/images/icons/icon-lemangotree-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ site.github.url }}/images/icons/icon-lemangotree-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.github.url }}/images/icons/icon-lemangotree-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ site.github.url }}/images/icons/icon-lemangotree-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.github.url }}/images/icons/icon-lemangotree-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ site.github.url }}/images/icons/icon-lemangotree-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ site.github.url }}/images/icons/icon-lemangotree-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ site.github.url }}/images/icons/icon-lemangotree-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.github.url }}/images/icons/icon-lemangotree-180x180.png">
 
-  <!-- Twitter Card data -->
+  <link rel="shortcut icon" type="image/png" href="href="{{ "favicon/favicon-32x32.png" | prepend: site.baseurl }}"" sizes="32x32">
+
+  <meta name="apple-mobile-web-app-title" content="Le Mango Tree">
+  <meta name="application-name" content="Le Mango Tree">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="msapplication-TileImage" content="{{ site.github.url }}/images/icons/icon-lemangotree-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="" />
+
+  <!-- Open Graph FB -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:url" content="{{ site.github.url }}">
+  <meta property="og:image" content="{{ site.github.url }}/{{ page.thumbnail }}"/>
+  <meta property="og:site_name" content="{{ site.title }}">
+
+  <!-- Twitter card data -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@lemangotree">
-  <meta name="twitter:title" content="{{ page.title }}">
-  <meta name="twitter:description" content="Le Mango Tree - Nouveau bar à jus de fruits sur Hossegor, Capbreton, Seignosse">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta name="twitter:description" content="{{ site.description }}">
   <meta name="twitter:creator" content="@lemangotree">
-  <!-- Twitter summary card with large image must be at least 280x150px -->
-  <meta name="twitter:image:src" content="{{ site.url }}/img/orange.jpg">
+  <meta name="twitter:image:src" content="{{ site.github.url }}/{{ page.thumbnail }}">
 
-  <!-- Open Graph data -->
-  <meta property="og:title" content="{{ site.title }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ site.url }}" />
-  <meta property="og:image" content="{{ site.url }}/img/orange.jpg" />
-  <meta property="og:description" content="Le Mango Tree - Nouveau bar à jus de fruits sur Hossegor, Capbreton, Seignosse" />
-  <meta property="og:site_name" content="{{ site.title }}" />
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta itemprop="description" content="{{ site.description }}">
+  <meta itemprop="image" content="{{ site.github.url }}/{{ page.thumbnail }}">
 
-  <link rel="stylesheet" href="{{ site.url }}/css/main.css">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Links Vendors & CSS -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,500,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ site.github.url }}/css/main.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'>
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 </head>

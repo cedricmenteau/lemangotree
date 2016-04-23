@@ -1,32 +1,107 @@
 ---
 layout: default
-title: "Le Mango Tree"
+title: Le Mango Tree
+thumbnail: images/carousel/en_deux_mots_1.jpg
 ---
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-5">
-    </div>
-    <div class="col-md-7">
-      <div class="content">
-        <h1>Une ribambelle de <span class="red">jus de fruits frais</span> débarque sur Hossegor cet été !</h1>
-        <p>Soyez les premiers prévenus du lieu et de la date d'ouverture du <span class="red">Mango Tree</span> et recevez nos offres exclusives !</p>
-        <span class="name">Maud & Danaé</span>
-        <div class="newsletter">
-          <div id="mc_embed_signup">
-            <form action="//lemangotree.us10.list-manage.com/subscribe/post?u=12cf7a6ac3e8ddca4d3db9279&amp;id=837e251dbc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-              <div id="mc_embed_signup_scroll">
-                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Laissez-nous votre adresse email ici !" required>
-                <div style="position: absolute; left: -5000px;">
-                  <input type="text" name="b_12cf7a6ac3e8ddca4d3db9279_837e251dbc" tabindex="-1" value="">
-                </div>
-                <input type="submit" value="Re-pulpez-vous !" name="subscribe" id="mc-embedded-subscribe" class="button">
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="fb-like" data-href="https://facebook.com/lemangotree" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  <section id="intro">
+    <h2>Un petit goût de paradis</h2>
+    <!-- SVG Divider -->
+    {% include svg/separator.html %}
+    <p>Le Mango Tree est le premier bar à jus et smoothies bowls 100 % naturel d'Hossegor. L'idée est simple : la nourriture doit être bonne pour nous, pour notre corps et notre esprit, respectueuse de notre planète et surtout absolument savoureuse ! Se nourrir sainement et avec plaisir contribue au bonheur !</p>
+    <img class="image-intro" src="{{ site.github.url }}/images/carousel/en_deux_mots_1.jpg" alt="">
+  </section>
+
+  <section id="sisters">
+    <div class="sisters-presentation">
+      <h2>En deux mots</h2>
+      <!-- Content Divider -->
+      <div class="sisters-content">
+        <h3>Des voyages</h3>
+        <p>Le Mango Tree est le résultat de nombreux voyages et de multiples passions ! La passion des bons produits et des choses saines, l'amour des produits de la terre, des cerises cueillies sur l'arbre, de la menthe ramassée dans le jardin, des fruits tellement bio qu'on en mange la peau !</p>
+        <img class="image-intro" src="{{ site.github.url }}/images/carousel/en_deux_mots_2.jpg" alt="">
+        <h3>Deux soeurs</h3>
+        <p>Le Mango Tree c'est aussi notre histoire, celle de deux sœurs inséparables et volontaires, originaires des Landes, qui proposent une cuisine fraiche, différente, savoureuse et exclusivement biologique, servie dans un cadre magnifique. Une touche de nomadisme, un zeste d'excentricité, une dose d'exotisme, un souffle naturel d'air frais</p>
+        <img class="image-intro" src="{{ site.github.url }}/images/carousel/en_deux_mots_3.jpg" alt="">
       </div>
     </div>
-  </div>
+    <div class="sisters-carousel">
+      <div class="carousel">
+        <div><img src="{{ site.github.url }}/images/carousel/en_deux_mots_1.jpg" alt=""></div>
+        <div><img src="{{ site.github.url }}/images/carousel/en_deux_mots_2.jpg" alt=""></div>
+        <div><img src="{{ site.github.url }}/images/carousel/en_deux_mots_3.jpg" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="block-1">
+      <div class="image image-1"></div>
+      <div class="image image-2"></div>
+    </div>
+
+    <div class="block-2">
+      <div class="image-3"></div>
+
+      <div class="block-3">
+        <div class="prestations-content">
+          <h2>Nos créations</h2>
+          <p>Sur notre belle terrasse face au lac ou à emporter, nous proposons des petits déjeuner fruités, des brunch végétariens, un large choix jus de fruits et de légumes pressés sur l'instant, des smoothies maison 100 % naturels, gourmands et sains, des bols végératiens et des tartines à midi ! Mais aussi un joli choix de café, thé, infusions biologiques, boissons fraiches maison, smoothies bowls, granola et desserts entièrement faits maison !</p>
+        </div>
+        <div class="image-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2>Retrouvez l'intégralité de notre carte</h2>
+    <!-- SVG Divider -->
+    {% include svg/separator.html %}
+    <div class="illustrations">
+      {% include svg/watermelons.html %}
+      {% include svg/mixer.html %}
+      {% include svg/bowl.html %}
+    </div>
+    <a href="{{ site.github.url }}/menu" alt="">Notre menu</a>
+  </section>
+
+  <section id="origins">
+    <div class="block-2">
+      <div class="block-3">
+        <div class="prestations-content">
+          <h2>Healthy spot</h2>
+          <p>Nous travaillons autant que possible avec des produits frais locaux, des ingrédients biologiques et de saison. Nous cultivons nos propres herbes, fleurs comestibles et légumes dans notre superbe jardin potager ! Notre pain est bio, cuit quotidiennement au feu de bois et au levain naturel. Tout est entièrement naturel et fait maison, avec un maximum de goût et un minimum de sucre !</p>
+        </div>
+        <div class="image-4"></div>
+      </div>
+      <div class="image-3"></div>
+    </div>
+
+    <div class="block-1">
+      <div class="image image-1"></div>
+      <div class="image image-2"></div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="block-1">
+      <div class="image image-1"></div>
+      <div class="what-we-do">
+        <h2>Préstations événementielles</h2>
+        <!-- SVG Divider -->
+        {% include svg/separator.html %}
+        <p>Installé dans une caravane vintage aux couleurs acidulées, Le Mango Tree « Events » se déplace sur vos événements !</p>
+        <p>Vous recherchez quelque chose de différent et pétillant pour votre soirée d'anniversaire, brunch et lendemain de mariage, cocktail d'entreprise, soirée de lancement et vernissage, fête privée ? Nous vous proposons une prestation sur mesure.</p>
+      </div>
+      <div class="image image-2"></div>
+    </div>
+    <div class="block-2">
+      <div class="image image-3"></div>
+      <div class="image image-4"></div>
+    </div>
+  </section>
+
+  {% include reach-us.html %}
+
 </div>
