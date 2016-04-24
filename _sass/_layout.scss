@@ -63,7 +63,17 @@ section#sisters {
   flex-direction: column;
   padding: 0;
 
-  @media (min-width: 1024px) { flex-direction: row; }
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+
+  @media (max-width: 1024px) {
+    padding-bottom: 60px;
+  }
+
+  @media (max-width: 550px) {
+    padding-bottom: 0;
+  }
 
   .image-intro {
     width: 100%;
@@ -94,6 +104,13 @@ section#sisters {
         flex-direction: column;
       }
 
+      .content-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
       p {
         width: 90%;
         text-align: center;
@@ -110,9 +127,8 @@ section#sisters {
   }
 
   .sisters-carousel {
-
     width: 100%;
-    max-height: 525px;
+    min-height: 525px;
 
     @media (min-width: 1024px) {
       width: 50%;
@@ -126,12 +142,22 @@ section#sisters {
       padding-top: 40px;
       width: 100%;
 
+      @media (max-width: 1024px) {
+        margin: 0 auto;
+        width: 95%;
+      }
+
       .slick-list {
         height: 525px !important;
+        @media (max-width: 1024px) {
+          height: 100% !important;
+        }
 
         .slick-slide {
           img {
             width: 100%;
+            border: 5px solid #fff;
+            box-sizing: border-box;
           }
         }
       }
@@ -147,6 +173,11 @@ section#sisters {
         transform: translateY(-40%);
         left: -15px;
 
+        @media (max-width: 1024px) {
+          width: 100%;
+          top: 103%;
+        }
+
         li {
           display: flex;
           align-items: center;
@@ -154,6 +185,11 @@ section#sisters {
           margin: 0 0 1rem;
           width: 30px;
           height: 30px;
+
+          @media (max-width: 1024px) {
+            display: inline-block;
+            margin: 0 0 0 4rem;
+          }
 
           button {
             width: 10px;
@@ -285,6 +321,7 @@ section#origins {
 }
 
 section#products {
+
   .block-1 {
     .image-1 {
       &:after {
@@ -420,10 +457,12 @@ section#events {
 
   .block-1 {
     display: flex;
-     @media (max-width: 550px) { flex-direction: column; }
+    @media (min-width: 551px) and (max-width: 1199px) { flex-wrap: wrap; }
+    @media (max-width: 550px) { flex-direction: column; }
 
     .image {
       width: 33.33333%;
+      @media (min-width: 551px) and (max-width: 1199px) { width: 50%; }
       @media (max-width: 550px) { width: 100%; }
 
       &:after {
@@ -436,14 +475,14 @@ section#events {
     }
 
     .image-1 {
-      @media (max-width: 550px) { order: 2; }
+      @media (max-width: 1199px) { order: 2; }
       &:after {
         background-image: url('../images/evenements/nos_evenements_1.jpg');
       }
     }
 
     .image-2 {
-      @media (max-width: 550px) { order: 3; }
+      @media (max-width: 1199px) { order: 3; }
       &:after {
         background-image: url('../images/evenements/nos_evenements_2.jpg');
       }
@@ -458,6 +497,13 @@ section#events {
       padding: 0 5%;
       width: 33.33333%;
       text-align: center;
+
+      @media (min-width: 551px) and (max-width: 1199px) {
+        order: 1;
+        width: 100%;
+        padding: 0 20%;
+      }
+
       @media (max-width: 550px) {
         order: 1;
         width: 100%;
