@@ -356,6 +356,103 @@ section#products {
 }
 
 section#origins {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 0 40px;
+  @media (max-width: 1199px) { padding: 60px 0 40px; }
+
+  .block-1 {
+    display: flex;
+    flex-direction: column;
+    width: 42.5%;
+
+    @media (max-width: 1199px) {
+      flex-direction: row;
+      order: 2;
+      width: 100%;
+    }
+
+    .image {
+      width: 100%;
+
+      @media (max-width: 1199px) {
+        width: 50%;
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 101.5%;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .block-2 {
+    display: flex;
+    flex-direction: column;
+    width: 57.5%;
+
+    @media (max-width: 1199px) {
+      width: 50%;
+      order: 1;
+    }
+
+    .image-3 {
+      width: 100%;
+      order: 2;
+
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .block-3 {
+      display: flex;
+      flex-wrap: wrap;
+      order: 1;
+
+      .image-4 {
+        width: 50%;
+
+        @media (max-width: 1199px) {
+          order: 2;
+          width: 100%;
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+
+      .prestations-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5%;
+        width: 40%;
+        text-align: center;
+
+        @media (max-width: 1199px) {
+          order: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /* ORIGINS PICTURES *********************************************************/
+
   .block-1 {
     .image-1 {
       &:after {
@@ -438,13 +535,6 @@ section#menu {
       outline: 0;
     }
   }
-}
-
-section#origins {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 80px 0 40px;
-  @media (max-width: 550px) { padding: 60px 0 40px; }
 }
 
 section#events {
@@ -546,7 +636,11 @@ section#contact {
   display: flex;
   padding: 80px 90px 40px;
 
-  @media (max-width: 550px) {
+  @media (min-width: 551px) and (max-width: 1199px) {
+    padding: 80px 20px 40px;
+  }
+
+  @media (max-width: 768px) {
     flex-direction: column;
     padding: 60px 0 40px;
   }
@@ -557,7 +651,7 @@ section#contact {
     justify-content: center;
     align-items: center;
     width: 50%;
-    @media (max-width: 550px) { width: 100%; }
+    @media (max-width: 768px) { width: 100%; }
   }
 
   .contact-map {
@@ -566,7 +660,7 @@ section#contact {
     border: 5px solid #fff;
     border-radius: 2px;
 
-    @media (max-width: 550px) {
+    @media (max-width: 768px) {
       order: 2;
       display: none;
     }
@@ -576,7 +670,7 @@ section#contact {
     padding: 0 60px;
     width: 30%;
 
-    @media (max-width: 550px) {
+    @media (max-width: 768px) {
       order: 1;
       padding: 0 0 30px;
       width: 100%;
@@ -622,7 +716,7 @@ section#contact {
         outline: 0;
       }
 
-      @media (min-width: 550px) {
+      @media (min-width: 768px) {
         display: none;
       }
     }

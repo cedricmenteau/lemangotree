@@ -9,7 +9,7 @@
 title: Le Mango Tree
 email: contact@lemangotree.com
 description: "Le Mango Tree est le premier bar à jus et smoothies bowls 100% naturel à Hossegor avec une vue imprenable sur le lac !"
-baseurl: /lemangotree-v2
+# baseurl: /lemangotree-v2
 url: "http://www.lemangotree.com" # the base hostname & protocol for your site
 instagram_username: lemangotree
 facebook_username: lemangotree
