@@ -394,9 +394,17 @@ section#origins {
     flex-direction: column;
     width: 57.5%;
 
-    @media (max-width: 1199px) {
+    @media (max-width: 550px) {
+      width: 100%;
+    }
+
+    @media (min-width: 551px) and (max-width: 1198px) {
       width: 50%;
-      order: 1;
+    }
+
+    @media (min-width: 1199px) {
+      width: 57.5%;
+      // order: 1;
     }
 
     .image-3 {
