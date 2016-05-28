@@ -6,6 +6,14 @@
 
   h2 {
     margin-bottom: 0.5rem;
+
+    @media (min-width: 551px) and (max-width: 1199px) {
+      text-align: center;
+    }
+
+    @media (min-width: 551px) and (max-width: 1024px) {
+      &:before, &:after { display: none; }
+    }
   }
 
   p {
