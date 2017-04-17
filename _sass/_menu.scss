@@ -65,7 +65,7 @@
     justify-content: space-around;
     padding-bottom: 60px;
     width: 100%;
-    @media (max-width: 550px) {
+    @media (max-width: 800px) {
       flex-direction: column;
       padding-bottom: 0;
     }
@@ -75,17 +75,30 @@
       flex-direction: column;
       align-items: center;
       box-sizing: border-box;
+      padding: 15px;
       width: 30%;
+      min-height: 258px;
       background-color: #fff;
       border: 1px solid rgb(255, 218, 218);
       border-radius: 2px;
-      @media (max-width: 550px) {
+      @media (max-width: 800px) {
         margin-bottom: 30px;
         width: 100%;
       }
     }
+
+    .formule-items {
+      max-width: 280px;
+    }
   }
 
+  section#smoothies-bowls {
+    .extra {
+      text-align: center;
+    }
+  }
+
+  section#snacks,
   section#drinks,
   section#coffee {
     margin-top: 30px;
@@ -99,8 +112,16 @@
       display: flex;
       width: 100%;
 
+      @media (max-width: 550px) {
+        flex-direction: column;
+      }
+
       ul {
         width: 50%;
+
+        @media (max-width: 550px) {
+          width: 100%;
+        }
       }
     }
   }
