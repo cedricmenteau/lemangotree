@@ -3,6 +3,91 @@ layout: reservation
 title: Réserver
 thumbnail: images/creations/nos_creations_3.jpg
 ---
-<div class="reservation-wrapper">
-  <div class="typeform-widget" data-url="https://lemangotree.typeform.com/to/VG6GBT" data-transparency="100" style="width: 100%; height: 100%;"></div><script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id="typef_orm",b="https://s3-eu-west-1.amazonaws.com/share.typeform.com/";if(!gi.call(d,id)){js=ce.call(d,"script");js.id=id;js.src=b+"widget.js";q=gt.call(d,"script")[0];q.parentNode.insertBefore(js,q)}})()</script>
+
+
+
+<div class="reservation-wrapper" style="padding: 60px;">
+  <form id="booking_form" method="POST" action="https://formspree.io/contact@lemangotree.com">
+    <input type="hidden" name="_subject" />
+    <input type="text" name="_gotcha" style="display:none" />
+    <label>Prénom</label>
+    <input type="text" name="Nom" placeholder="Boby Lapointe"/>
+    <label>Email</label>
+    <input type="email" name="Email" placeholder="boby@lapointe.com">
+    <label>Choisissez votre date</label>
+    <input type="text" id="datepicker" placeholder="jj/mm/aa">
+    <textarea id="getDate" name="Date de réservation" style="display: none;"></textarea>
+    <label>Nombre de personnes</label>
+    <select name="Nombre de personnes" placeholder="1">
+      <option value="1 personne" selected>1</option>
+      <option value="2 personnes">2</option>
+      <option value="3 personnes">3</option>
+      <option value="4 personnes">4</option>
+      <option value="5 personnes">5</option>
+      <option value="6 personnes">6</option>
+      <option value="7+ personnes">7+</option>
+    </select>
+    <label>Un petit mot ?</label>
+    <textarea name="Message (optionnel)" placeholder="(optionnel)"></textarea>
+    <button type="submit">Je réserve</button>
+    <input type="hidden" name="_next" value="//site.io/thanks.html" />
+  </form>
+
+  <script>
+
+    const submitButton = document.querySelector('button');
+    let defaultDate = document.getElementById('datepicker');
+    const mailSubject = document.querySelector('input[name="_subject"]');
+    const people = document.querySelector('select');
+
+    $(document).ready(function(){
+      $.datepicker.regional['fr'] = {
+        closeText: 'Fermer',
+        prevText: '&#x3c;Préc',
+        nextText: 'Suiv&#x3e;',
+        currentText: 'Aujourd\'hui',
+        monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
+        'Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+        monthNamesShort: ['Jan','Fev','Mar','Avr','Mai','Jun',
+        'Jul','Aou','Sep','Oct','Nov','Dec'],
+        dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+        dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+        dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd MM yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: '',
+        minDate: 0,
+        maxDate: '+12M +0D',
+        numberOfMonths: 1,
+        showButtonPanel: false
+      };
+
+      $.datepicker.setDefaults($.datepicker.regional['fr']);
+      $.datepicker.formatDate( "dd MM yy", new Date() );
+      $( "#datepicker" ).datepicker({
+        beforeShowDay: function(date){ return [date.getDay() == 0,""]}
+      });
+    });
+
+    submitButton.addEventListener('click', () => {
+      defaultDate = $("#datepicker").datepicker().val();
+      getDate = document.getElementById('getDate');
+      getDate.value = defaultDate;
+      getPeople = document.querySelector('select').value;
+      mailSubject.value = '[BRUNCH] - ' + getPeople + ', le ' + getDate.value
+    });
+  </script>
 </div>
+
+<section id="instagram">
+  <h2>Suivez-nous sur Instagram !</h2>
+  <!-- SVG Divider -->
+  {% include svg/separator.html %}
+  <p><a href="https://www.instagram.com/lemangotree/" alt="Lien vers le compte instagram du Mango Tree">@lemangotree</a></p>
+  <div id="instafeed">
+    <!-- Instagram gallery -->
+  </div>
+</section>

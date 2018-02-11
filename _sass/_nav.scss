@@ -162,3 +162,11 @@ nav.scrolled {
 .overlay-mobile-menu.hidden {
   display: none;
 }
+
+.button-resa {
+  display: flex;
+  min-width: 131px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
