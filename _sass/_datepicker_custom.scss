@@ -15,3 +15,26 @@
   background: #fffcf4 !important;
   color: #38e2aa !important;
 }
+
+a.ui-datepicker-next.ui-corner-all.ui-state-hover.ui-datepicker-next-hover,
+a.ui-datepicker-prev.ui-corner-all.ui-state-hover.ui-datepicker-prev-hover {
+  background-color: white !important;
+  border: none !important;
+  cursor: pointer;
+}
+
+.ui-datepicker .ui-datepicker-next span {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid black;
+}
+
+.ui-datepicker .ui-datepicker-prev span {
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right:6px solid black;
+}

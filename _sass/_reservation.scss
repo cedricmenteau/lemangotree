@@ -1,3 +1,87 @@
-.typeform-widget {
-  height: 100vh !important;
+.header-reservation {
+  height: 260px;
+
+  .container-logo {
+    position: absolute;
+    top: 140px;
+
+    img {
+      height: 160px;
+    }
+  }
+}
+
+
+.brunch-logo {
+  margin-bottom: 30px;
+  height: 160px;
+}
+
+.reservation-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ffdada;
+  border-radius: 2px;
+
+  .brunch-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding-right: 10px;
+
+    ul {
+      max-width: 290px;
+      text-align: center;
+      list-style: none;
+    }
+  }
+
+  form {
+    padding: 20px 20px 20px 40px;
+
+    label {
+      font-size: 12px;
+    }
+
+    select {
+      width: 40px;
+    }
+
+    textarea {
+      resize: none;
+      width: 320px;
+      height: 130px;
+    }
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #cdcdcd;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #cdcdcd;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: #cdcdcd;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: #cdcdcd;
+    }
+
+    .parsley-errors-list {
+      position: absolute;
+      margin: -14px 0 0 220px;
+      max-width: 320px;
+      font-size: 12px;
+      text-align: right;
+      list-style: none;
+      color: red;
+    }
+
+    #parsley-id-11 {
+      margin: -14px 0 0 130px;
+    }
+  }
 }

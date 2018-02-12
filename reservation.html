@@ -1,40 +1,73 @@
 ---
 layout: reservation
-title: Réserver
+title: Réservez votre brunch
 thumbnail: images/creations/nos_creations_3.jpg
 ---
 
+<header id="header" class="header-reservation">
+  <div class="container-logo">
+    <img src="{{ site.github.url }}/images/logo-mangotree-blue.png" alt="">
+  </div>
+</header>
 
+<div class="container">
+  <section id="intro" style="padding: 120px 0 30px 0;">
+    <h2>Réservez votre brunch</h2>
+    <!-- SVG Divider -->
+    {% include svg/separator.html %}
+    <p>Tous les dimanches, de 10h30 à 14h, nous préparons sous yeux un magnifique plateau très complet, gourmand et fruité. Réservez vite votre brunch healthy et coloré au Mango Tree !</p>
+  </section>
+</div>
 
 <div class="reservation-wrapper" style="padding: 60px;">
-  <form id="booking_form" method="POST" action="https://formspree.io/contact@lemangotree.com" data-parsley-validate="">
-    <input type="hidden" name="_subject" />
-    <input type="text" name="_gotcha" style="display:none" />
-    <input type="hidden" name="_format" value="plain" />
-    <label>Prénom</label>
-    <input type="text" name="Nom" placeholder="Boby Lapointe" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Boby Lapointe'" required="" />
-    <label>Email</label>
-    <input type="email" name="_replyto" placeholder="boby@lapointe.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'boby@lapointe.com'" data-parsley-type="email" required="" />
-    <label>Mobile</label>
-    <input type="tel" name="Phone number" placeholder="0645454545" onfocus="this.placeholder = ''" onblur="this.placeholder = '0645454545'" required="" minlength="10" data-parsley-pattern="\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*(\d{1,2})$">
-    <label>Choisissez votre date</label>
-    <input type="text" id="datepicker" placeholder="jj/mm/aa">
-    <textarea id="getDate" name="Date de réservation" style="display: none;"></textarea>
-    <label>Nombre de personnes</label>
-    <select name="Nombre de personnes" placeholder="1">
-      <option value="1 personne" selected>1</option>
-      <option value="2 personnes">2</option>
-      <option value="3 personnes">3</option>
-      <option value="4 personnes">4</option>
-      <option value="5 personnes">5</option>
-      <option value="6 personnes">6</option>
-      <option value="7+ personnes">7+</option>
-    </select>
-    <label>Un petit mot ?</label>
-    <textarea name="Message (optionnel)" placeholder="(optionnel)" onfocus="this.placeholder = ''" onblur="this.placeholder = '(optionnel)'"></textarea>
-    <button type="submit">Je réserve</button>
-    <input type="hidden" name="_next" value="validate"/>
-  </form>
+
+  <div class="brunch-details">
+    <h2>Au menu</h2>
+    {% include svg/separator.html %}
+    <ul>
+      <li>Thé ou café</li>
+      <li>Jus de fruits frais</li>
+      <li>Croissant tout chaud</li>
+      <li>Assortiment de pains, beurre demi sel et confitures bio</li>
+      <li>Avocado toast sur pain bio cuit au feu de bois, graines de pavot, citron & fleurs du jardin</li>
+      <li>Houmous de betterave au cumin, pavot noir</li>
+      <li>Salade de fruits frais exotiques et de saison</li>
+      <li>Salade de saison aux saveurs exotiques, aromates du potager</li>
+      <li>Cru-potte de pommes biologques</li>
+      <li>Fromage blanc & noisettes toastées</li>
+    </ul>
+    <i>20€</i>
+  </div>
+
+    <form id="booking_form" method="POST" action="https://formspree.io/contact@lemangotree.com" data-parsley-validate="">
+      <input type="hidden" name="_subject" />
+      <input type="text" name="_gotcha" style="display:none" />
+      <input type="hidden" name="_next" value="{{ site.github.url }}/merci" />
+      <label>Prénom*</label>
+      <input type="text" name="Nom" placeholder="Boby Lapointe" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Boby Lapointe'" required="" style="width: 320px;"/>
+      <label>Email*</label>
+      <input type="email" name="_replyto" placeholder="boby@lapointe.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'boby@lapointe.com'" data-parsley-type="email" required="" style="width: 320px;"/>
+      <label>Téléphone*</label>
+      <input type="tel" name="Phone number" placeholder="0645454545" onfocus="this.placeholder = ''" onblur="this.placeholder = '0645454545'" required="" minlength="10" data-parsley-pattern="((?:\+|00)[17](?: |\-)?|(?:\+|00)[1-9]\d{0,2}(?: |\-)?|(?:\+|00)1\-\d{3}(?: |\-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |\-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |\-)[0-9]{3}(?: |\-)[0-9]{4})|([0-9]{7}))" style="width: 230px;">
+      <label>Choisissez votre date</label>
+      <input type="text" id="datepicker" placeholder="jj/mm/aa" style="width: 230px;">
+      <textarea id="getDate" name="Date de réservation" style="display: none;"></textarea>
+      <label>Nombre de personnes</label>
+      <select name="Nombre de personnes" placeholder="1">
+        <option value="1 personne" selected>1</option>
+        <option value="2 personnes">2</option>
+        <option value="3 personnes">3</option>
+        <option value="4 personnes">4</option>
+        <option value="5 personnes">5</option>
+        <option value="6 personnes">6</option>
+        <option value="7+ personnes">7+</option>
+      </select>
+      <label>Dites-le nous</label>
+      <textarea name="Message (optionnel)" placeholder="Un petit mot ? Une allergie ? Un régime spécial ?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Un petit mot ? Une allergie ? Un régime spécial ?'" rows="13" cols="20"></textarea>
+      <button type="submit">Je réserve</button>
+      <input type="hidden" name="_next" value="validate"/>
+    </form>
+
 
   <script>
 
@@ -71,7 +104,46 @@ thumbnail: images/creations/nos_creations_3.jpg
       $.datepicker.setDefaults($.datepicker.regional['fr']);
       $.datepicker.formatDate( "dd MM yy", new Date() );
       $( "#datepicker" ).datepicker({
+        minDate: new Date(2018, 04 - 1, 7),
+        maxDate: new Date(2018, 10 - 1, 15),
         beforeShowDay: function(date){ return [date.getDay() == 0,""]}
+      });
+    });
+
+    $(document).ready(function(){
+      Parsley.addMessages('fr', {
+        defaultMessage: "Cette valeur semble non valide.",
+        type: {
+          email:        "Adresse email non valide.",
+          url:          "Cette valeur n'est pas une URL valide.",
+          number:       "Cette valeur doit être un nombre.",
+          integer:      "Cette valeur doit être un entier.",
+          digits:       "Cette valeur doit être numérique.",
+          alphanum:     "Cette valeur doit être alphanumérique."
+        },
+        notblank:       "Cette valeur ne peut pas être vide.",
+        required:       "Ce champ est requis.",
+        pattern:        "Numéro non valide.",
+        min:            "Cette valeur ne doit pas être inférieure à %s.",
+        max:            "Cette valeur ne doit pas excéder %s.",
+        range:          "Cette valeur doit être comprise entre %s et %s.",
+        minlength:      "Cette chaîne est trop courte. Elle doit avoir au minimum %s caractères.",
+        maxlength:      "Cette chaîne est trop longue. Elle doit avoir au maximum %s caractères.",
+        length:         "Cette valeur doit contenir entre %s et %s caractères.",
+        mincheck:       "Vous devez sélectionner au moins %s choix.",
+        maxcheck:       "Vous devez sélectionner %s choix maximum.",
+        check:          "Vous devez sélectionner entre %s et %s choix.",
+        equalto:        "Cette valeur devrait être identique."
+      });
+
+      Parsley.setLocale('fr');
+
+      $('#booking_form').parsley().on('field:validated', function() {
+        var ok = $('.parsley-error').length === 0;
+        $('.bs-callout-info').toggleClass('hidden', !ok);
+
+      }).on('form:submit', function() {
+        return true; // Don't submit form for this demo
       });
     });
 
