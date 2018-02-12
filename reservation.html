@@ -7,13 +7,16 @@ thumbnail: images/creations/nos_creations_3.jpg
 
 
 <div class="reservation-wrapper" style="padding: 60px;">
-  <form id="booking_form" method="POST" action="https://formspree.io/contact@lemangotree.com">
+  <form id="booking_form" method="POST" action="https://formspree.io/contact@lemangotree.com" data-parsley-validate="">
     <input type="hidden" name="_subject" />
     <input type="text" name="_gotcha" style="display:none" />
+    <input type="hidden" name="_format" value="plain" />
     <label>Prénom</label>
-    <input type="text" name="Nom" placeholder="Boby Lapointe"/>
+    <input type="text" name="Nom" placeholder="Boby Lapointe" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Boby Lapointe'" required="" />
     <label>Email</label>
-    <input type="email" name="Email" placeholder="boby@lapointe.com">
+    <input type="email" name="_replyto" placeholder="boby@lapointe.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'boby@lapointe.com'" data-parsley-type="email" required="" />
+    <label>Mobile</label>
+    <input type="tel" name="Phone number" placeholder="0645454545" onfocus="this.placeholder = ''" onblur="this.placeholder = '0645454545'" required="" minlength="10" data-parsley-pattern="\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*\d\W*(\d{1,2})$">
     <label>Choisissez votre date</label>
     <input type="text" id="datepicker" placeholder="jj/mm/aa">
     <textarea id="getDate" name="Date de réservation" style="display: none;"></textarea>
@@ -28,9 +31,9 @@ thumbnail: images/creations/nos_creations_3.jpg
       <option value="7+ personnes">7+</option>
     </select>
     <label>Un petit mot ?</label>
-    <textarea name="Message (optionnel)" placeholder="(optionnel)"></textarea>
+    <textarea name="Message (optionnel)" placeholder="(optionnel)" onfocus="this.placeholder = ''" onblur="this.placeholder = '(optionnel)'"></textarea>
     <button type="submit">Je réserve</button>
-    <input type="hidden" name="_next" value="//site.io/thanks.html" />
+    <input type="hidden" name="_next" value="validate"/>
   </form>
 
   <script>
@@ -59,7 +62,7 @@ thumbnail: images/creations/nos_creations_3.jpg
         isRTL: false,
         showMonthAfterYear: false,
         yearSuffix: '',
-        minDate: 0,
+        minDate: 1,
         maxDate: '+12M +0D',
         numberOfMonths: 1,
         showButtonPanel: false
