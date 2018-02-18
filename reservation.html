@@ -1,6 +1,6 @@
 ---
 layout: reservation
-title: Réservez votre brunch
+title: Réservez votre brunch au Mango tree
 thumbnail: images/creations/nos_creations_3.jpg
 ---
 
@@ -11,15 +11,15 @@ thumbnail: images/creations/nos_creations_3.jpg
 </header>
 
 <div class="container">
-  <section id="intro" style="padding: 120px 0 30px 0;">
+  <section id="intro" class="brunch-intro" style="padding: 120px 0 30px 0;">
     <h2>Réservez votre brunch</h2>
     <!-- SVG Divider -->
     {% include svg/separator.html %}
-    <p>Tous les dimanches, de 10h30 à 14h, nous préparons sous yeux un magnifique plateau très complet, gourmand et fruité. Réservez vite votre brunch healthy et coloré au Mango Tree !</p>
+    <p>D'avril à octobre, tous les dimanches, de 10h30 à 14h, nous préparons sous yeux un magnifique plateau très complet, gourmand et fruité. Réservez vite votre brunch healthy et coloré au Mango Tree !</p>
   </section>
 </div>
 
-<div class="reservation-wrapper" style="padding: 60px;">
+<div class="reservation-wrapper">
 
   <div class="brunch-details">
     <h2>Au menu</h2>
@@ -42,7 +42,7 @@ thumbnail: images/creations/nos_creations_3.jpg
     <form id="booking_form" method="POST" action="https://formspree.io/contact@lemangotree.com" data-parsley-validate="">
       <input type="hidden" name="_subject" />
       <input type="text" name="_gotcha" style="display:none" />
-      <input type="hidden" name="_next" value="{{ site.github.url }}/merci" />
+      <input type="hidden" name="_cc" value="ag1mpanr@robot.zapier.com" />
       <label>Prénom*</label>
       <input type="text" name="Nom" placeholder="Boby Lapointe" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Boby Lapointe'" required="" style="width: 320px;"/>
       <label>Email*</label>
@@ -138,6 +138,10 @@ thumbnail: images/creations/nos_creations_3.jpg
 
       Parsley.setLocale('fr');
 
+      $('#booking_form').parsley({
+        excluded: 'input[type=hidden], :disabled'
+      });
+
       $('#booking_form').parsley().on('field:validated', function() {
         var ok = $('.parsley-error').length === 0;
         $('.bs-callout-info').toggleClass('hidden', !ok);
@@ -152,7 +156,7 @@ thumbnail: images/creations/nos_creations_3.jpg
       getDate = document.getElementById('getDate');
       getDate.value = defaultDate;
       getPeople = document.querySelector('select').value;
-      mailSubject.value = '[BRUNCH] - ' + getPeople + ', le ' + getDate.value
+      mailSubject.value = '[BRUNCH] - ' + getPeople + ', le ' + getDate.value;
     });
   </script>
 </div>
