@@ -40,8 +40,6 @@ $on-laptop:        800px;
   }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "font",
@@ -53,8 +51,12 @@ $on-laptop:        800px;
   "header",
   "header_menu",
   "menu",
+  "validate",
   "reservation",
+  "datepicker_custom",
   "vendor/okaynav",
   "vendor/slick",
-  "vendor/slick-theme"
+  "vendor/slick-theme",
+  "vendor/datepicker",
+  "vendor/jquery-ui"
 ;
