@@ -39,6 +39,7 @@
   }
 
   @media (max-width: 720px) {
+    flex-direction: column;
     margin: 0 auto 60px;
     width: 80%;
   }
@@ -55,7 +56,7 @@
     padding-right: 10px;
 
     @media (max-width: 720px) {
-      display: none;
+      width: 100%;
     }
 
     ul {
