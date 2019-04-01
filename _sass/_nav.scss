@@ -96,8 +96,8 @@ nav {
     ul.nav-desktop {
       display: flex;
       justify-content: space-around;
+      padding: 0 80px;
       margin: 0 auto;
-      max-width: 960px;
       list-style: none;
       height: 60px;
       align-items: center;
@@ -164,7 +164,8 @@ nav.scrolled {
 }
 
 .button-resa {
-  display: flex;
+  direction: flex;
+  justify-content: center;
   min-width: 131px;
   padding: 10px;
   border: 1px solid rgba(0,0,0,0.3);
